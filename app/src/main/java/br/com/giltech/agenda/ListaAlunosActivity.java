@@ -33,9 +33,7 @@ public class ListaAlunosActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 Aluno aluno = (Aluno) listaAlunos.getItemAtPosition(position);
-                Intent intentVaiProFormulario = new Intent(ListaAlunosActivity.this, FormularioActivity.class);
-                intentVaiProFormulario.putExtra("aluno", aluno);
-                startActivity(intentVaiProFormulario);
+                changeFormulario(aluno);
             }
         });
 
@@ -49,6 +47,12 @@ public class ListaAlunosActivity extends AppCompatActivity {
         });
 
         registerForContextMenu(listaAlunos);
+    }
+
+    private void changeFormulario(Aluno aluno) {
+        Intent intentVaiProFormulario = new Intent(ListaAlunosActivity.this, FormularioActivity.class);
+        intentVaiProFormulario.putExtra("aluno", aluno);
+        startActivity(intentVaiProFormulario);
     }
 
     @Override
@@ -76,6 +80,16 @@ public class ListaAlunosActivity extends AppCompatActivity {
             }
         });
         MenuItem editar = menu.add("Editar");
+        editar.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
+                Aluno aluno = (Aluno) listaAlunos.getItemAtPosition(info.position);
+
+                changeFormulario(aluno);
+                return false;
+            }
+        });
     }
 
     private void carregaLista() {
