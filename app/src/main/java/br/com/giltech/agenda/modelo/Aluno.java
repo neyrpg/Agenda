@@ -3,7 +3,7 @@ package br.com.giltech.agenda.modelo;
 
 import java.io.Serializable;
 
-public class Aluno implements Serializable{
+public class Aluno implements Serializable {
 
     private Long id;
     private String nome;
