@@ -10,6 +10,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="225dp">
+
             <ImageView android:id="@+id/formulario_imagem"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
@@ -28,25 +29,25 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nome"
+            android:hint="@string/nome"
             android:id="@+id/formulario_nome"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Endereço"
+            android:hint="@string/endereco"
             android:id="@+id/formulario_endereco"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Telefone"
+            android:hint="@string/telefone"
             android:id="@+id/formulario_telefone"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Site"
+            android:hint="@string/site"
             android:id="@+id/formulario_site"/>
 
         <RatingBar

@@ -56,9 +56,15 @@ public class ListaAlunosAdapter extends BaseAdapter {
 
         TextView nome = viewLista.findViewById(R.id.lista_nome_aluno);
         TextView telefone = viewLista.findViewById(R.id.lista_telefone_aluno);
+        TextView endereco = viewLista.findViewById(R.id.lista_endereco_aluno);
+        TextView site = viewLista.findViewById(R.id.lista_site_aluno);
         ImageView foto = viewLista.findViewById(R.id.lista_imagem_foto);
         Aluno aluno = alunos.get(i);
 
+        if(endereco != null && site != null){
+            endereco.setText(aluno.getEndereco());
+            site.setText(aluno.getSite());
+        }
         nome.setText(aluno.getNome());
         telefone.setText(aluno.getTelefone());
         if (aluno.getFoto() != null){
